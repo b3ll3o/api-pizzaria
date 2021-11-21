@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Post } from '@nestjs/common';
 import { NovoUsuarioDto, UsuarioCadastradoDto } from './application/dtos';
 import { UsuariosApplicationService } from './application/usuarios-application.service';
 
@@ -11,7 +11,11 @@ export class UsuariosController {
   @Post()
   async adicionaNovoUsuario(
     @Body() novoUsuarioDto: NovoUsuarioDto,
-  ): Promise<UsuarioCadastradoDto> {
-    return this.usuariosApplicationService.adicionaNovoUsuario(novoUsuarioDto);
+  ): Promise<UsuarioCadastradoDto | BadRequestException> {
+    try {
+      return await this.usuariosApplicationService.adicionaNovoUsuario(novoUsuarioDto);
+    } catch (error) {
+      throw new BadRequestException(error.message)
+    }
   }
 }
