@@ -1,5 +1,5 @@
 import { BadRequestException, Body, Controller, Post } from '@nestjs/common';
-import { Public } from '../auth/public/public.strategy';
+import { NoJwtGuard } from '../auth/no-jwt-guard/no-jwt-guard.strategy';
 import { NovoUsuarioDto, UsuarioCadastradoDto } from './application/dtos';
 import { UsuariosApplicationService } from './application/usuarios-application.service';
 
@@ -9,7 +9,7 @@ export class UsuariosController {
     private readonly usuariosApplicationService: UsuariosApplicationService,
   ) {}
 
-  @Public()
+  @NoJwtGuard()
   @Post()
   async adicionaNovoUsuario(
     @Body() novoUsuarioDto: NovoUsuarioDto,
