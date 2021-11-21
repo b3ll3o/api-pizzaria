@@ -13,9 +13,11 @@ export class UsuariosController {
     @Body() novoUsuarioDto: NovoUsuarioDto,
   ): Promise<UsuarioCadastradoDto | BadRequestException> {
     try {
-      return await this.usuariosApplicationService.adicionaNovoUsuario(novoUsuarioDto);
+      return await this.usuariosApplicationService.adicionaNovoUsuario(
+        novoUsuarioDto,
+      );
     } catch (error) {
-      throw new BadRequestException(error.message)
+      throw new BadRequestException(error.message);
     }
   }
 }

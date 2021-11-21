@@ -25,4 +25,18 @@ export class UsuariosApplicationService {
 
     return Promise.resolve(usuarioCadastradoDto);
   }
+
+  async buscaPorEmail(
+    email: string,
+  ): Promise<UsuarioCadastradoDto | undefined> {
+    const usuario = await this.usuariosService.buscaUsuarioPorEmail(email);
+    if (!usuario) return Promise.resolve(undefined);
+
+    const usuarioCadastradoDto = new UsuarioCadastradoDto();
+    usuarioCadastradoDto.id = usuario.id;
+    usuarioCadastradoDto.email = usuario.email;
+    usuarioCadastradoDto.senha = usuario.senha;
+
+    return Promise.resolve(usuarioCadastradoDto);
+  }
 }
