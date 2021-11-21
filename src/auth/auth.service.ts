@@ -4,7 +4,10 @@ import { UsuariosApplicationService } from '../usuarios/application/usuarios-app
 
 @Injectable()
 export class AuthService {
-  constructor(private usuariosApplicationService: UsuariosApplicationService, private jwtService: JwtService) {}
+  constructor(
+    private usuariosApplicationService: UsuariosApplicationService,
+    private jwtService: JwtService,
+  ) {}
 
   async validateUser(email: string, senha: string): Promise<any> {
     const usuario = await this.usuariosApplicationService.buscaPorEmail(email);
