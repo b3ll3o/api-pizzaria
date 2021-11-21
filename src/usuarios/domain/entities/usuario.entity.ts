@@ -1,6 +1,11 @@
-export class Usuario {
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-  id: number
-  email: string
-  senha: string
+@Entity()
+export class Usuario {
+  @PrimaryGeneratedColumn()
+  id: number;
+  @Column()
+  email: string;
+  @Column()
+  senha: string;
 }

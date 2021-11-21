@@ -1,7 +1,5 @@
-
 export class NovoUsuarioDto {
+  email: string;
 
-  email: string
-
-  senha: string
+  senha: string;
 }

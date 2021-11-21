@@ -4,11 +4,14 @@ import { UsuariosApplicationService } from './application/usuarios-application.s
 
 @Controller('usuarios')
 export class UsuariosController {
-
-  constructor(private readonly usuariosApplicationService: UsuariosApplicationService) { }
+  constructor(
+    private readonly usuariosApplicationService: UsuariosApplicationService,
+  ) {}
 
   @Post()
-  async adicionaNovoUsuario(@Body() novoUsuarioDto: NovoUsuarioDto): Promise<UsuarioCadastradoDto>{
-    return this.usuariosApplicationService.adicionaNovoUsuario(novoUsuarioDto)
+  async adicionaNovoUsuario(
+    @Body() novoUsuarioDto: NovoUsuarioDto,
+  ): Promise<UsuarioCadastradoDto> {
+    return this.usuariosApplicationService.adicionaNovoUsuario(novoUsuarioDto);
   }
 }
