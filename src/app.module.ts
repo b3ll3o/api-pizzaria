@@ -4,6 +4,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './auth/jwt/jwt-auth.guard';
+import { PizzariasModule } from './pizzarias/pizzarias.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { JwtAuthGuard } from './auth/jwt/jwt-auth.guard';
       autoLoadEntities: true,
     }),
     AuthModule,
+    PizzariasModule,
   ],
   controllers: [],
   providers: [
