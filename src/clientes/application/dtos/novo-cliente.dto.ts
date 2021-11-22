@@ -1,8 +1,8 @@
-import { IsNotEmpty } from "class-validator";
+import { IsNotEmpty } from 'class-validator';
 
 export class NovoClienteDto {
   @IsNotEmpty()
-  nome: string
+  nome: string;
   @IsNotEmpty()
-  endereco: string
+  endereco: string;
 }

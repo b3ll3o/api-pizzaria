@@ -5,11 +5,16 @@ import { PizzariasApplicationService } from './application/pizzarias-application
 
 @Controller('pizzarias')
 export class PizzariasController {
-
-  constructor(private readonly pizzariasApplicationService: PizzariasApplicationService) { }
+  constructor(
+    private readonly pizzariasApplicationService: PizzariasApplicationService,
+  ) {}
 
   @Post()
-  async adicionaNovaPizzaria(@Body() novaPizzariaDto: NovaPizzariaDto): Promise<PizzariaCadastradaDto> {
-    return this.pizzariasApplicationService.adicionaNovaPizzaria(novaPizzariaDto)
+  async adicionaNovaPizzaria(
+    @Body() novaPizzariaDto: NovaPizzariaDto,
+  ): Promise<PizzariaCadastradaDto> {
+    return this.pizzariasApplicationService.adicionaNovaPizzaria(
+      novaPizzariaDto,
+    );
   }
 }

@@ -1,11 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Pizzaria {
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
   @Column()
-  endereco: string
+  endereco: string;
   @Column()
-  nome: string
+  nome: string;
 }

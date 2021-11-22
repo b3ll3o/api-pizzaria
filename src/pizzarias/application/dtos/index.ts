@@ -1,1 +1,1 @@
-export * from './nova-pizzaria.dto'
+export * from './nova-pizzaria.dto';

@@ -8,6 +8,6 @@ import { Cliente } from './domain/entities/cliente.entity';
 @Module({
   controllers: [ClientesController],
   providers: [ClientesApplicationService, ClientesService],
-  imports: [TypeOrmModule.forFeature([Cliente])]
+  imports: [TypeOrmModule.forFeature([Cliente])],
 })
 export class ClientesModule {}

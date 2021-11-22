@@ -4,10 +4,13 @@ import { ClientesApplicationService } from './application/dtos/clientes-applicat
 
 @Controller('clientes')
 export class ClientesController {
-
-  constructor(private readonly clientesApplicationService: ClientesApplicationService) { }
+  constructor(
+    private readonly clientesApplicationService: ClientesApplicationService,
+  ) {}
   @Post()
-  async adicionaNovoCliente(@Body() cliente: NovoClienteDto): Promise<ClienteCadastradoDto> {
-    return this.clientesApplicationService.adicionaNovoClientePizzaria(cliente)
+  async adicionaNovoCliente(
+    @Body() cliente: NovoClienteDto,
+  ): Promise<ClienteCadastradoDto> {
+    return this.clientesApplicationService.adicionaNovoClientePizzaria(cliente);
   }
 }
