@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './auth/jwt/jwt-auth.guard';
 import { PizzariasModule } from './pizzarias/pizzarias.module';
+import { ClientesModule } from './clientes/clientes.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { PizzariasModule } from './pizzarias/pizzarias.module';
     }),
     AuthModule,
     PizzariasModule,
+    ClientesModule,
   ],
   controllers: [],
   providers: [
